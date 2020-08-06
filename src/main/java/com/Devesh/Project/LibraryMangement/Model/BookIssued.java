@@ -11,7 +11,7 @@ import java.util.Date;
  * Entity Class for Issued Book
  */
 @Entity
-public class IssuedBook  {
+public class BookIssued {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

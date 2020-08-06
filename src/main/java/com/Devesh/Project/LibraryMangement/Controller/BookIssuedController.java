@@ -1,8 +1,7 @@
 package com.Devesh.Project.LibraryMangement.Controller;
 
-import com.Devesh.Project.LibraryMangement.Model.IssuedBook;
-import com.Devesh.Project.LibraryMangement.Model.User;
-import com.Devesh.Project.LibraryMangement.Repository.IssuedBookRepository;
+import com.Devesh.Project.LibraryMangement.Model.BookIssued;
+import com.Devesh.Project.LibraryMangement.Repository.BookIssuedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,26 +13,26 @@ import java.util.List;
 
 @RestController
 @EnableSwagger2
-public class IssuedBookController {
+public class BookIssuedController {
 
     @Autowired
-    IssuedBookRepository issuedBookRepository;
+    BookIssuedRepository bookIssuedRepository;
 
     /**
      * @return
      */
     @RequestMapping(value = "/getAllIssuedBooks",method = RequestMethod.GET)
-    public List<IssuedBook> getAllIssuedBooks(){
+    public List<BookIssued> getAllIssuedBooks(){
 
-        return (List<IssuedBook>) issuedBookRepository.findAll();
+        return (List<BookIssued>) bookIssuedRepository.findAll();
     }
 
     /**
-     * @param issuedBook
+     * @param bookIssued
      */
     @RequestMapping(value="/addIssuedBook",method=RequestMethod.POST)
-    public void addIssuedBook(@RequestParam IssuedBook issuedBook){
-        issuedBookRepository.save(issuedBook);
+    public void addIssuedBook(@RequestParam BookIssued bookIssued){
+        bookIssuedRepository.save(bookIssued);
     }
 
 }

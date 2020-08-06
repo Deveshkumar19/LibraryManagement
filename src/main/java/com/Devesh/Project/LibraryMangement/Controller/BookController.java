@@ -32,7 +32,7 @@ public class BookController {
      * @param book
      */
     @RequestMapping(value="/addBook",method=RequestMethod.POST)
-    public void addBook(@RequestParam Book book){
+    public void addBook(@RequestBody Book book){
          bookRepository.save(book);
     }
 

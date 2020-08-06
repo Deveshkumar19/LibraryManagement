@@ -1,0 +1,3 @@
+FROM openjdk:8
+ADD target/docker-library.jar docker-library.jar
+CMD ["java","-jar","docker-library.jar"]
